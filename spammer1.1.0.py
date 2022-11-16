@@ -1,16 +1,20 @@
 import tkinter as tk
 import pyautogui as pg
+from PIL import Image, ImageTk
 
 root = tk.Tk()
 root.title("Spammer")
 root.configure(background="#2C3639")
+ico = Image.open(r"C:\Users\aries\OneDrive\Documents\Programming\Spammer\logo.ico")
+photo = ImageTk.PhotoImage(ico)
+root.wm_iconphoto(False, photo)
 
 
 def send():
     text = e.get()
-    pg.click(644, 650)  # Move to the right location. Use position function.
+    pg.click(644, 650)  # Move to the right location.
     pos = pg.position()
-    while pos == pg.position():  # Will end if mouse change position
+    while pos == pg.position():  # Will end if mouse change position.
         pg.typewrite(text)
         pg.press("Enter")
 
