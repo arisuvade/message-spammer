@@ -4,40 +4,46 @@ from PIL import Image, ImageTk
 
 root = tk.Tk()
 root.title("Spammer")
-root.configure(background="#2C3639")
+root.configure(background="#2C3333")
 ico = Image.open(r"C:\Users\aries\OneDrive\Documents\Programming\Spammer\logo.ico")
 photo = ImageTk.PhotoImage(ico)
 root.wm_iconphoto(False, photo)
 
 
 def send():
-    text = e.get()
-    pg.click(644, 650)  # Move to the right location.
+    text = textbox.get()
+
+    # Center of the monitor.
+    height, width = pg.size()
+    pg.click(height / 2, width / 2)
+
+    # Will end if you move your mouse.
     pos = pg.position()
-    while pos == pg.position():  # Will end if mouse change position.
-        pg.typewrite(text)
+    while pos == pg.position():
+        pg.write(text)
         pg.press("Enter")
 
 
-e = tk.Entry(
+textbox = tk.Entry(
     root,
     width=25,
     borderwidth=5,
-    bg="#A5C9CA",
+    fg="white",
+    bg="#395B64",
     font=(7),
     relief="flat",
 )
-e.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
+textbox.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
 
-c = tk.Button(
+send_btn = tk.Button(
     root,
     text="Send",
-    bg="#A27B5C",
+    bg="#A5C9CA",
     font=("monospace", 10, "bold"),
     padx=40,
     borderwidth=5,
     command=send,
 )
-c.grid(column=0, row=1, columnspan=4)
+send_btn.grid(column=0, row=1, columnspan=4)
 
 root.mainloop()
