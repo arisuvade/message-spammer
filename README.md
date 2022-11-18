@@ -10,7 +10,7 @@ This program can spam messages on websites and other typing platforms.
 6. Move the mouse if you want to end the program.
 
 ## Tested
-* Tested on windows and linux.
+* Tested on windows only.
 * Tested on Python 3.10 and 3.11 only.
 * Tested on following websites:
   - Facebook
