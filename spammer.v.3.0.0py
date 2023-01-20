@@ -61,7 +61,7 @@ class MessageSpammer:
         pg.click()
 
         # To send the message
-        # Will start the execution if the mouse hover
+        # Will start the execution if the mouse hovers
         pos = pg.position()
         for _ in range(int(self.count.get())):
             if pos == pg.position():
