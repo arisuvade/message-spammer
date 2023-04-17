@@ -54,7 +54,6 @@ class MessageSpammer:
             command=self.theme,
         )
         self.switch.place(relx=0.5, rely=0.8, anchor="center")
-
         # Error
         self.error_label = ctk.CTkLabel(
             self.master,
@@ -69,6 +68,9 @@ class MessageSpammer:
             # Clear error message
             self.error_label.configure(text="")
 
+            # Get count from user input
+            count = int(self.count.get())
+
             # To move the mouse and run
             height, width = pg.size()
             pg.click(height / 2, width / 4)
@@ -76,14 +78,13 @@ class MessageSpammer:
 
             # To send the message
             pos = pg.position()
-            for _ in range(int(self.count.get())):
+            for _ in range(count):
                 # Will end the execution if the mouse hovers
-
                 if pos == pg.position():
                     pg.typewrite(self.msg.get())
                     pg.press("Enter")
                     time.sleep(0.3)
-        except:
+        except ValueError:
             self.error_label.configure(text="Error: Invalid number in count.")
 
     def theme(self):
