@@ -1,5 +1,6 @@
 import customtkinter as ctk
 import pyautogui as pg
+import time
 
 
 class MessageSpammer:
@@ -61,12 +62,13 @@ class MessageSpammer:
         pg.click()
 
         # To send the message
-        # Will start the execution if the mouse hovers
+        # Will end the execution if the mouse hovers
         pos = pg.position()
         for _ in range(int(self.count.get())):
             if pos == pg.position():
                 pg.typewrite(self.msg.get())
                 pg.press("Enter")
+                time.sleep(0.5)
 
     def theme(self):
         if self.switch.get() == 1:
