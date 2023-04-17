@@ -77,7 +77,7 @@ class MessageSpammer:
 
     def update_title(self):
         # Change title
-        self.title.configure(text="Hover the mouse to exit.")
+        self.title.configure(text="Hover the mouse to end.")
 
         # Call the method again after 2 seconds
         self.master.after(2000, self.reset_title)
