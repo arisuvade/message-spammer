@@ -18,7 +18,7 @@ class MessageSpammer:
         )
         self.title.place(relx=0.5, rely=0.065, anchor="center")
 
-        # Call update_title method every 2 seconds
+        # Call update_title method every 3 seconds
         self.master.after(3000, self.update_title)
 
         # Message
