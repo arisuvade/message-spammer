@@ -6,7 +6,7 @@ import time
 class MessageSpammer:
     def __init__(self, master: ctk.CTk):
         self.master = master
-        self.master.geometry("300x200")
+        self.master.geometry("300x210")
         self.master.resizable(False, False)
         self.master.wm_title("Spammer")
 
@@ -55,20 +55,34 @@ class MessageSpammer:
         )
         self.switch.place(relx=0.5, rely=0.8, anchor="center")
 
-    def send_msg(self):
-        # To move the mouse and run
-        height, width = pg.size()
-        pg.click(height / 2, width / 4)
-        pg.click()
+        # Error
+        self.error_label = ctk.CTkLabel(
+            self.master,
+            text="",
+        )
+        self.error_label.place(relx=0.5, rely=0.93, anchor="center")
 
-        # To send the message
-        pos = pg.position()
-        for _ in range(int(self.count.get())):
-            # Will end the execution if the mouse hovers
-            if pos == pg.position():
-                pg.typewrite(self.msg.get())
-                pg.press("Enter")
-                time.sleep(0.3)
+    def send_msg(self):
+        try:
+            # Clear error message
+            self.error_label.configure(text="")
+
+            # To move the mouse and run
+            height, width = pg.size()
+            pg.click(height / 2, width / 4)
+            pg.click()
+
+            # To send the message
+            pos = pg.position()
+            for _ in range(int(self.count.get())):
+                # Will end the execution if the mouse hovers
+
+                if pos == pg.position():
+                    pg.typewrite(self.msg.get())
+                    pg.press("Enter")
+                    time.sleep(0.3)
+        except:
+            self.error_label.configure(text="Error: Invalid number in count.")
 
     def theme(self):
         if self.switch.get() == 1:
