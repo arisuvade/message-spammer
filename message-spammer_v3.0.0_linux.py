@@ -10,6 +10,17 @@ class MessageSpammer:
         self.master.resizable(False, False)
         self.master.wm_title("Spammer")
 
+        # Title and how to end the program
+        self.title = ctk.CTkLabel(
+            self.master,
+            text="Type your message and how many.",
+            font=("Jetbrains Mono", 12, "bold"),
+        )
+        self.title.place(relx=0.5, rely=0.065, anchor="center")
+
+        # Call update_title method every 2 seconds
+        self.master.after(3000, self.update_title)
+
         # Message
         self.msg = ctk.CTkEntry(
             self.master,
@@ -54,6 +65,7 @@ class MessageSpammer:
             command=self.theme,
         )
         self.switch.place(relx=0.5, rely=0.8, anchor="center")
+
         # Error
         self.error_label = ctk.CTkLabel(
             self.master,
@@ -62,6 +74,20 @@ class MessageSpammer:
             text_color="red",
         )
         self.error_label.place(relx=0.5, rely=0.93, anchor="center")
+
+    def update_title(self):
+        # Change title
+        self.title.configure(text="Hover the mouse to exit.")
+
+        # Call the method again after 2 seconds
+        self.master.after(2000, self.reset_title)
+
+    def reset_title(self):
+        # Change title back to the original text
+        self.title.configure(text="Type your message and how many.")
+
+        # Call the method again after 2 seconds
+        self.master.after(2000, self.update_title)
 
     def send_msg(self):
         try:
@@ -79,12 +105,15 @@ class MessageSpammer:
             # To send the message
             pos = pg.position()
             for _ in range(count):
+
                 # Will end the execution if the mouse hovers
                 if pos == pg.position():
                     pg.typewrite(self.msg.get())
                     pg.press("Enter")
                     time.sleep(0.3)
+
         except ValueError:
+            # Show the error in app
             self.error_label.configure(text="Error: Invalid number in count.")
 
     def theme(self):
