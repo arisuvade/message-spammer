@@ -41,7 +41,7 @@ To use the Message Spammer script, follow these steps:
 4. Press "Send" to send the message to the recipients.
 
 ## License
-This project is licensed under the [MIT License]().
+This project is licensed under the [MIT License](https://github.com/arisuvade/message-spammer/blob/main/LICENSE).
 
 ## Acknowledgements
 This script was inspired by the need to send mass messages to people for various purposes. Thanks to the open-source community for providing the tools and resources needed to create this script.
