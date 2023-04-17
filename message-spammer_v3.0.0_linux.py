@@ -68,7 +68,7 @@ class MessageSpammer:
             if pos == pg.position():
                 pg.typewrite(self.msg.get())
                 pg.press("Enter")
-                time.sleep(0.5)
+                time.sleep(0.3)
 
     def theme(self):
         if self.switch.get() == 1:
