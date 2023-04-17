@@ -59,6 +59,8 @@ class MessageSpammer:
         self.error_label = ctk.CTkLabel(
             self.master,
             text="",
+            font=("Jetbrains Mono", 12, "bold"),
+            text_color="red",
         )
         self.error_label.place(relx=0.5, rely=0.93, anchor="center")
 
