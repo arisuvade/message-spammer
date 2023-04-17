@@ -62,9 +62,9 @@ class MessageSpammer:
         pg.click()
 
         # To send the message
-        # Will end the execution if the mouse hovers
         pos = pg.position()
         for _ in range(int(self.count.get())):
+            # Will end the execution if the mouse hovers
             if pos == pg.position():
                 pg.typewrite(self.msg.get())
                 pg.press("Enter")
