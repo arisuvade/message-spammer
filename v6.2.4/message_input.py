@@ -11,5 +11,5 @@ class MessageInput(ctk.CTkEntry):
             border_width=2,
             corner_radius=10,
             font=("Jetbrains Mono", 14),
-            **kwargs
+            **kwargs,
         )

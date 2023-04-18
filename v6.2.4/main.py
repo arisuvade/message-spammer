@@ -1,16 +1,21 @@
 #!/usr/bin/env python3
 
+# Libraries
 import customtkinter as ctk
 import pyautogui as pg
 import time
 
+# GUI's
 from message_input import MessageInput
 from count_input import CountInput
 from send_button import SendButton
 
+# Others
 from title import TitleUpdater
 from theme import ThemeSwitch
 from message_counter import MessageCounter
+from current_progress import CurrentProgress
+from total_progress import TotalProgress
 
 
 class MessageSpammer:
@@ -46,19 +51,11 @@ class MessageSpammer:
         self.counter = MessageCounter()
 
         # Current progress label
-        self.current_progress_label = ctk.CTkLabel(
-            self.master,
-            text="0",
-            font=("Jetbrains Mono", 12),
-        )
+        self.current_progress_label = CurrentProgress(self.master)
         self.current_progress_label.place(relx=0.15, rely=0.8, anchor="center")
 
         # Total progress label
-        self.total_progress_label = ctk.CTkLabel(
-            self.master,
-            text="0",
-            font=("Jetbrains Mono", 12),
-        )
+        self.total_progress_label = TotalProgress(self.master)
         self.total_progress_label.place(relx=0.85, rely=0.8, anchor="center")
 
         # Error
@@ -79,7 +76,7 @@ class MessageSpammer:
             count = int(self.count.get())
 
             # Total count
-            total_count = self.counter.get_count() + 1
+            total_count = self.counter.get_count()
 
             # To move the mouse and run
             height, width = pg.size()
