@@ -33,7 +33,8 @@ To use the Message Spammer script, follow these steps:
     - For Windows: Install the app itself or run the file in your terminal or code editor
     - For Linux:
     ```bash
-    $ ./message-spammer_v3.0.0_linux.py
+    $ cd [VERSION]
+    $ ./main.py
     ```
 
 3. Follow the prompts to customize the message contents and how many the count of message to send.
