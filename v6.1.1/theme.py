@@ -15,7 +15,9 @@ class ThemeSwitch(ctk.CTkSwitch):
         )
 
     def theme(self):
-        if self.switch.get() == 1:
+        if self.get() == 1:
             set_appearance_mode("dark")
+            self.configure(text="Light Mode")
         else:
             set_appearance_mode("light")
+            self.configure(text="Dark Mode")
