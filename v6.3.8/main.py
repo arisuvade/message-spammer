@@ -14,8 +14,8 @@ from send_button import SendButton
 from title import TitleUpdater
 from theme import ThemeSwitch
 from message_counter import MessageCounter
-from current_progress import CurrentProgress
-from total_progress import TotalProgress
+from current_progress import CurrentProgressLabel, CurrentProgressCount
+from total_progress import TotalProgressLabel, TotalProgressCount
 
 
 class MessageSpammer:
@@ -50,13 +50,17 @@ class MessageSpammer:
         # Message counter
         self.counter = MessageCounter()
 
-        # Current progress label
-        self.current_progress_label = CurrentProgress(self.master)
-        self.current_progress_label.place(relx=0.15, rely=0.8, anchor="center")
+        # Current progress
+        self.current_progress_label = CurrentProgressLabel(self.master)
+        self.current_progress_label.place(relx=0.15, rely=0.64, anchor="center")
+        self.current_progress_count = CurrentProgressCount(self.master)
+        self.current_progress_count.place(relx=0.15, rely=0.74, anchor="center")
 
-        # Total progress label
-        self.total_progress_label = TotalProgress(self.master)
-        self.total_progress_label.place(relx=0.85, rely=0.8, anchor="center")
+        # Total progress
+        self.current_progress_label = TotalProgressLabel(self.master)
+        self.current_progress_label.place(relx=0.5, rely=0.64, anchor="center")
+        self.total_progress_count = TotalProgressCount(self.master)
+        self.total_progress_count.place(relx=0.85, rely=0.74, anchor="center")
 
         # Error
         self.error_label = ctk.CTkLabel(
@@ -100,14 +104,14 @@ class MessageSpammer:
                 current_count = i + 1
                 self.counter.increment()
                 current_progress_text = f"{current_count}"
-                self.current_progress_label.configure(text=current_progress_text)
-                self.current_progress_label.update()
+                self.current_progress_count.configure(text=current_progress_text)
+                self.current_progress_count.update()
 
                 # Update total progress label
                 total_count += 1
                 total_progress_text = f"{total_count}"
-                self.total_progress_label.configure(text=total_progress_text)
-                self.total_progress_label.update()
+                self.total_progress_count.configure(text=total_progress_text)
+                self.total_progress_count.update()
 
         except ValueError:
             # Show the error in app
