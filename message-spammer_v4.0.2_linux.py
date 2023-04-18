@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import customtkinter as ctk
 import pyautogui as pg
 import time
