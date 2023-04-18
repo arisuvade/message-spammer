@@ -10,12 +10,13 @@ from send_button import SendButton
 
 from title import TitleUpdater
 from theme import ThemeSwitch
+from message_counter import MessageCounter
 
 
 class MessageSpammer:
     def __init__(self, master: ctk.CTk):
         self.master = master
-        self.master.geometry("300x210")
+        self.master.geometry("300x220")
         self.master.resizable(False, False)
         self.master.wm_title("Spammer")
 
@@ -39,6 +40,26 @@ class MessageSpammer:
 
         # Theme switch
         self.theme_switch = ThemeSwitch(self.master)
+        self.theme_switch.place(relx=0.5, rely=0.8, anchor="center")
+
+        # Message counter
+        self.counter = MessageCounter()
+
+        # Current progress label
+        self.current_progress_label = ctk.CTkLabel(
+            self.master,
+            text="0",
+            font=("Jetbrains Mono", 12),
+        )
+        self.current_progress_label.place(relx=0.15, rely=0.8, anchor="center")
+
+        # Total progress label
+        self.total_progress_label = ctk.CTkLabel(
+            self.master,
+            text="0",
+            font=("Jetbrains Mono", 12),
+        )
+        self.total_progress_label.place(relx=0.85, rely=0.8, anchor="center")
 
         # Error
         self.error_label = ctk.CTkLabel(
@@ -57,6 +78,9 @@ class MessageSpammer:
             # Get count from user input
             count = int(self.count.get())
 
+            # Total count
+            total_count = self.counter.get_count() + 1
+
             # To move the mouse and run
             height, width = pg.size()
             pg.click(height / 2, width / 4)
@@ -64,13 +88,29 @@ class MessageSpammer:
 
             # To send the message
             pos = pg.position()
-            for _ in range(count):
+            for i in range(count):
 
-                # Will end the execution if the mouse hovers
-                if pos == pg.position():
-                    pg.typewrite(self.msg.get())
-                    pg.press("Enter")
-                    time.sleep(0.3)
+                # Check if the mouse position has changed to end the loop
+                if pos != pg.position():
+                    break
+
+                # Send the message
+                pg.typewrite(self.msg.get())
+                pg.press("enter")
+                time.sleep(0.3)
+
+                # Update current progress label
+                current_count = i + 1
+                self.counter.increment()
+                current_progress_text = f"{current_count}"
+                self.current_progress_label.configure(text=current_progress_text)
+                self.current_progress_label.update()
+
+                # Update total progress label
+                total_count += 1
+                total_progress_text = f"{total_count}"
+                self.total_progress_label.configure(text=total_progress_text)
+                self.total_progress_label.update()
 
         except ValueError:
             # Show the error in app

@@ -5,14 +5,14 @@ def set_appearance_mode(mode):
     ctk.set_appearance_mode(mode)
 
 
-class ThemeSwitch:
-    def __init__(self, master):
-        self.switch = ctk.CTkSwitch(
+class ThemeSwitch(ctk.CTkSwitch):
+    def __init__(self, master, **kwargs):
+        super().__init__(
             master,
             text="Dark Mode",
             command=self.theme,
+            **kwargs,
         )
-        self.switch.place(relx=0.5, rely=0.8, anchor="center")
 
     def theme(self):
         if self.switch.get() == 1:
