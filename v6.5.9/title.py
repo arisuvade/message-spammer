@@ -16,12 +16,12 @@ class TitleUpdater:
         # Change title
         self.title.configure(text="Hover the mouse to end.")
 
-        # Call the method again after 2 seconds
-        self.master.after(2000, self.reset_title)
+        # Call the method again after 5 seconds
+        self.master.after(5000, self.reset_title)
 
     def reset_title(self):
         # Change title back to the original text
         self.title.configure(text="Type your message and how many.")
 
-        # Call the method again after 2 seconds
-        self.master.after(2000, self.update_title)
+        # Call the method again after 5 seconds
+        self.master.after(5000, self.update_title)

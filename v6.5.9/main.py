@@ -28,8 +28,8 @@ class MessageSpammer:
         # Title
         self.title = TitleUpdater(master=self.master)
 
-        # Call update_title method every 3 seconds
-        self.master.after(3000, self.title.update_title)
+        # Call update_title method every 5 seconds
+        self.master.after(5000, self.title.update_title)
 
         # Message
         self.msg = MessageInput(self.master)
