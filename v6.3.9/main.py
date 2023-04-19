@@ -58,7 +58,7 @@ class MessageSpammer:
 
         # Total progress
         self.current_progress_label = TotalProgressLabel(self.master)
-        self.current_progress_label.place(relx=0.5, rely=0.64, anchor="center")
+        self.current_progress_label.place(relx=0.85, rely=0.64, anchor="center")
         self.total_progress_count = TotalProgressCount(self.master)
         self.total_progress_count.place(relx=0.85, rely=0.74, anchor="center")
 
