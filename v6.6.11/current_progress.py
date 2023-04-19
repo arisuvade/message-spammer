@@ -1,21 +1,21 @@
 import customtkinter as ctk
 
 
-class TotalProgressLabel(ctk.CTkLabel):
+class CurrentProgressLabel(ctk.CTkLabel):
     def __init__(self, master, **kwargs):
         super().__init__(
             master,
-            text="Total",
+            text="Current",
             font=("Jetbrains Mono", 12),
             **kwargs,
         )
 
 
-class TotalProgressCount(ctk.CTkLabel):
+class CurrentProgressCount(ctk.CTkLabel):
     def __init__(self, master, **kwargs):
         super().__init__(
             master,
             text="0",
-            font=("Jetbrains Mono", 12),
+            font=("Jetbrains Mono", 16),
             **kwargs,
         )
