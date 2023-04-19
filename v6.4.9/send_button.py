@@ -10,6 +10,7 @@ class SendButton(ctk.CTkButton):
             border_width=0,
             corner_radius=8,
             text="Send",
-            hover_color="red",
+            fg_color="forest green",
+            hover_color="dark green",
             **kwargs,
         )
