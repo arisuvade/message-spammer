@@ -13,9 +13,3 @@ class CountInput(ctk.CTkEntry):
             font=("Jetbrains Mono", 14),
             **kwargs,
         )
-
-    def disable(self):
-        self.configure(state="disabled")
-
-    def enable(self):
-        self.configure(state="normal")

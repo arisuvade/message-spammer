@@ -8,9 +8,9 @@ class TitleUpdater:
         self.title = ctk.CTkLabel(
             self.master,
             text="Type your message and how many.",
-            font=("Jetbrains Mono", 12, "bold"),
+            font=("Jetbrains Mono", 14, "bold"),
         )
-        self.title.place(relx=0.5, rely=0.065, anchor="center")
+        self.title.place(relx=0.5, rely=0.09, anchor="center")
 
     def update_title(self):
         # Change title
