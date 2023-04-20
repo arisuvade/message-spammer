@@ -1,7 +1,7 @@
 import customtkinter as ctk
 
 
-class MessageInput(ctk.CTkEntry):
+class MessageEntry(ctk.CTkEntry):
     def __init__(self, master, **kwargs):
         super().__init__(
             master,

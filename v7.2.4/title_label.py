@@ -1,7 +1,7 @@
 import customtkinter as ctk
 
 
-class TitleUpdater(ctk.CTkLabel):
+class TitleLabel(ctk.CTkLabel):
     def __init__(self, master, **kwargs):
         super().__init__(
             master,

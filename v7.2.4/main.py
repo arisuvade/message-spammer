@@ -3,10 +3,10 @@
 import customtkinter as ctk
 import pyautogui as pg
 import time
-from message_entry import MessageInput
-from count_entry import CountInput
+from message_entry import MessageEntry
+from count_entry import CountEntry
 from send_button import SendButton
-from title_label import TitleUpdater
+from title_label import TitleLabel
 from theme_switch import ThemeSwitch
 from error_label import ErrorLabel
 
@@ -21,18 +21,18 @@ class MessageSpammer(ctk.CTk):
         self.wm_title("Message Spammer")
 
         # Title
-        self.title = TitleUpdater(master=self)
+        self.title = TitleLabel(master=self)
         self.title.place(relx=0.5, rely=0.09, anchor="center")
 
         # Update title every 5 seconds
         self.after(5000, self.title.update_title)
 
         # Message
-        self.msg = MessageInput(self)
+        self.msg = MessageEntry(self)
         self.msg.place(relx=0.5, rely=0.25, anchor="center")
 
         # Count
-        self.count = CountInput(self)
+        self.count = CountEntry(self)
         self.count.place(relx=0.5, rely=0.45, anchor="center")
 
         # Send
