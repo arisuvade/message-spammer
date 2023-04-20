@@ -2,11 +2,14 @@
 
 import customtkinter as ctk
 import pyautogui as pg
-import time
+from time import sleep
+from random import choice
+
+from title_label import TitleLabel
 from message_entry import MessageEntry
 from count_entry import CountEntry
+from delay_option import DelayOption
 from send_button import SendButton
-from title_label import TitleLabel
 from theme_switch import ThemeSwitch
 from error_label import ErrorLabel
 
@@ -16,7 +19,7 @@ class MessageSpammer(ctk.CTk):
         super().__init__(**kwargs)
 
         # Window
-        self.geometry("300x220")
+        self.geometry("300x240")
         self.resizable(False, False)
         self.wm_title("Message Spammer")
 
@@ -33,11 +36,15 @@ class MessageSpammer(ctk.CTk):
 
         # Count
         self.count = CountEntry(self)
-        self.count.place(relx=0.5, rely=0.45, anchor="center")
+        self.count.place(relx=0.5, rely=0.4, anchor="center")
+
+        # Delay
+        self.delay_option = DelayOption(self)
+        self.delay_option.place(relx=0.5, rely=0.55, anchor="center")
 
         # Send
         self.send = SendButton(self, command=self.send_msg)
-        self.send.place(relx=0.5, rely=0.65, anchor="center")
+        self.send.place(relx=0.5, rely=0.7, anchor="center")
 
         # Theme switch
         self.theme_switch = ThemeSwitch(self)
@@ -60,7 +67,8 @@ class MessageSpammer(ctk.CTk):
             pg.click(height / 2, width / 4)
             pg.click()
 
-            # To send the message
+            # To send the messagenice
+
             pos = pg.position()
             for _ in range(count):
                 # Check if the mouse position has changed to end the loop
@@ -70,7 +78,17 @@ class MessageSpammer(ctk.CTk):
                 # Send the message
                 pg.typewrite(self.msg.get())
                 pg.press("enter")
-                time.sleep(0.3)
+
+                match (self.delay_option.delay.get()):
+                    case "0.5 second":
+                        sleep(0.5)
+                    case "1 second":
+                        sleep(1)
+                    case "2 seconds":
+                        sleep(2)
+                    case "Random":
+                        delay_times = [0.5, 1, 2]
+                        sleep(choice(delay_times))
 
         except ValueError:
             # Show the error in app
