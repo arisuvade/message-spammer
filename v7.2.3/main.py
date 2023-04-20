@@ -3,12 +3,12 @@
 import customtkinter as ctk
 import pyautogui as pg
 import time
-from message_input import MessageInput
-from count_input import CountInput
+from message_entry import MessageInput
+from count_entry import CountInput
 from send_button import SendButton
-from title import TitleUpdater
-from theme import ThemeSwitch
-from error import ErrorLabel
+from title_label import TitleUpdater
+from theme_switch import ThemeSwitch
+from error_label import ErrorLabel
 
 
 class MessageSpammer(ctk.CTk):
