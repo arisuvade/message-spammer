@@ -11,8 +11,8 @@ from theme import ThemeSwitch
 from error import ErrorLabel
 
 
-class MessageSpammer:
-    def __init__(self, master: ctk.CTk):
+class MessageSpammer(ctk.CTk):
+    def __init__(self, master: ctk):
         self.master = master
         self.master.geometry("300x220")
         self.master.resizable(False, False)
@@ -20,6 +20,8 @@ class MessageSpammer:
 
         # Title
         self.title = TitleUpdater(master=self.master)
+        self.title.place(relx=0.5, rely=0.09, anchor="center")
+
         # Update title every 5 seconds
         self.master.after(5000, self.title.update_title)
 
