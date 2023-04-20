@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import customtkinter as ctk
 import pyautogui as pg
 from time import sleep
@@ -19,9 +17,9 @@ class MessageSpammer(ctk.CTk):
         super().__init__(**kwargs)
 
         # Window
+        self.wm_title("Message Spammer")
         self.geometry("300x240")
         self.resizable(False, False)
-        self.wm_title("Message Spammer")
 
         # Title
         self.title = TitleLabel(master=self)
@@ -67,8 +65,7 @@ class MessageSpammer(ctk.CTk):
             pg.click(height / 2, width / 4)
             pg.click()
 
-            # To send the messagenice
-
+            # To send the message
             pos = pg.position()
             for _ in range(count):
                 # Check if the mouse position has changed to end the loop
@@ -93,8 +90,3 @@ class MessageSpammer(ctk.CTk):
         except ValueError:
             # Show the error in app
             self.error_label.configure(text="Error: Invalid number in count.")
-
-
-if __name__ == "__main__":
-    app = MessageSpammer()
-    app.mainloop()
