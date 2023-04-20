@@ -12,37 +12,39 @@ from error import ErrorLabel
 
 
 class MessageSpammer(ctk.CTk):
-    def __init__(self, master: ctk):
-        self.master = master
-        self.master.geometry("300x220")
-        self.master.resizable(False, False)
-        self.master.wm_title("Spammer")
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+        # Window
+        self.geometry("300x220")
+        self.resizable(False, False)
+        self.wm_title("Spammer")
 
         # Title
-        self.title = TitleUpdater(master=self.master)
+        self.title = TitleUpdater(master=self)
         self.title.place(relx=0.5, rely=0.09, anchor="center")
 
         # Update title every 5 seconds
-        self.master.after(5000, self.title.update_title)
+        self.after(5000, self.title.update_title)
 
         # Message
-        self.msg = MessageInput(self.master)
+        self.msg = MessageInput(self)
         self.msg.place(relx=0.5, rely=0.25, anchor="center")
 
         # Count
-        self.count = CountInput(self.master)
+        self.count = CountInput(self)
         self.count.place(relx=0.5, rely=0.45, anchor="center")
 
         # Send
-        self.send = SendButton(self.master, command=self.send_msg)
+        self.send = SendButton(self, command=self.send_msg)
         self.send.place(relx=0.5, rely=0.65, anchor="center")
 
         # Theme switch
-        self.theme_switch = ThemeSwitch(self.master)
+        self.theme_switch = ThemeSwitch(self)
         self.theme_switch.place(relx=0.5, rely=0.85, anchor="center")
 
         # Error
-        self.error_label = ErrorLabel(self.master)
+        self.error_label = ErrorLabel(self)
         self.error_label.place(relx=0.5, rely=0.95, anchor="center")
 
     def send_msg(self):
@@ -76,6 +78,5 @@ class MessageSpammer(ctk.CTk):
 
 
 if __name__ == "__main__":
-    app = ctk.CTk()
-    gui = MessageSpammer(master=app)
+    app = MessageSpammer()
     app.mainloop()
