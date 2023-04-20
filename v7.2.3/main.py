@@ -18,7 +18,7 @@ class MessageSpammer(ctk.CTk):
         # Window
         self.geometry("300x220")
         self.resizable(False, False)
-        self.wm_title("Spammer")
+        self.wm_title("Message Spammer")
 
         # Title
         self.title = TitleUpdater(master=self)
