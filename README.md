@@ -1,45 +1,50 @@
-# Message Spammer
-Message Spammer is a Python script that allows you to send automated messages to multiple recipients simultaneously. The script is designed to simplify the process of sending messages to a large number of people by automating the sending process.
+# PyBlaster
+PyBlaster is a Message Spammer app created in Python that allows you to send automated messages to multiple recipients simultaneously. The app is designed to simplify the process of sending messages to people by automating the sending process.
 
 ## Features
 - Send automated messages simultaneously
-- Customize the message contents and recipients list
-- Supports Windows and Linux operating systems
+- Has title x tutorial of how to use
+- Customize the message contents
+- Customize how many message to send
+- Customize the time delay of messages
+- Switch themes to dark and light mode
 
 ## Installation
-To use the Message Spammer script, you'll need to install the tk and customtkinter packages. Here's how you can do that:
+To use the PyBlaster app, you'll need to install the tk, customtkinter, pyautogui packages. Here's how you can do that:
 
-1. Install the tk package:
-    - For Windows: `python -m pip install tk`
-    - For Linux: 
-      - Arch: `sudo pacman -S tk`
-      - Debian: `sudo apt-get install python-tk`
-      - Fedora: `sudo dnf install tkinter`
+1. Install the tk package: 
+    - Arch: `sudo pacman -S tk`
+    - Debian: `sudo apt-get install python-tk`
+    - Fedora: `sudo dnf install tkinter`
 
 2. Install the customtkinter package:
     - Install the package using pip:
     ```bash
-    pip install customtkinter
+    $ pip install customtkinter
+    ```
+
+3. Install the pyautogui package:
+    - Install the package using pip:
+    ```bash
+    $ pip install pyautogui
     ```
     
 
 ## Usage
-To use the Message Spammer script, follow these steps:
+To use the PyBlaster app, follow these steps:
 
 1. Open a terminal window and navigate to the directory where you cloned the repository.
 
-2. Run or install the script with the appropriate command for your operating system:
-
-    - For Windows: Install the app itself or run the file in your terminal or code editor
-    - For Linux:
+2. Run the script:
     ```bash
+    $ cd pyblaster
     $ cd [VERSION]
     $ ./main.py
     ```
 
-3. Follow the prompts to customize the message contents and how many the count of message to send.
+3. Follow the prompts to customize the message contents, how many the message to send, and what is the time delay. You can also change the theme to dark or light mode.
 
-4. Press "Send" to send the message to the recipients.
+4. Press "Send" to send the message to the recipient.
 
 ## License
 This project is licensed under the [MIT License](https://github.com/arisuvade/message-spammer/blob/main/LICENSE).

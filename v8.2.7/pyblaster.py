@@ -57,6 +57,9 @@ class PyBlaster(ctk.CTk):
             # Clear error message
             self.error_label.configure(text="")
 
+            # Disable count input
+            self.count.configure(state="disabled")
+
             # Get count from user input
             count = int(self.count.get())
 
@@ -92,3 +95,7 @@ class PyBlaster(ctk.CTk):
         except ValueError:
             # Show the error in app
             self.error_label.configure(text="Error: Invalid number in count.")
+
+        finally:
+            # Enable count input after message sending is complete or error handle
+            self.count.configure(state="normal")
