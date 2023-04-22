@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-from message_spammer import MessageSpammer
+from pyblaster import PyBlaster
 
 
 if __name__ == "__main__":
-    app = MessageSpammer()
+    app = PyBlaster()
     app.mainloop()

@@ -12,12 +12,12 @@ from theme_switch import ThemeSwitch
 from error_label import ErrorLabel
 
 
-class MessageSpammer(ctk.CTk):
+class PyBlaster(ctk.CTk):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
         # Window
-        self.wm_title("Message Spammer")
+        self.wm_title("PyBlaster")
         self.geometry("300x240")
         self.resizable(False, False)
 
@@ -77,6 +77,8 @@ class MessageSpammer(ctk.CTk):
                 pg.press("enter")
 
                 match (self.delay_option.delay.get()):
+                    case "Instant":
+                        pass
                     case "0.5 second":
                         sleep(0.5)
                     case "1 second":
