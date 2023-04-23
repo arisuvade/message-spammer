@@ -5,6 +5,7 @@ PyBlaster is a Message Spammer app created in Python that allows you to send aut
 - Send automated messages simultaneously
 - Has title x tutorial of how to use
 - Customize the message contents
+- Has 5 options of messages
 - Customize how many message to send
 - Customize the time delay of messages
 - Switch themes to dark and light mode
