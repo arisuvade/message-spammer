@@ -1,7 +1,7 @@
 import customtkinter as ctk
 import pyautogui as pg
 from time import sleep
-from random import choice
+from random import randint, choice
 
 from title_label import TitleLabel
 from message_options import MessageOptions
@@ -75,15 +75,26 @@ class PyBlaster(ctk.CTk):
 
             # To send the message
             pos = pg.position()
-            for _ in range(count):
+            for i in range(count):
                 # Check if the mouse position has changed to end the loop
                 if pos != pg.position():
                     break
 
                 # Send the message
-                pg.typewrite(self.message_entry.get())
+                match (self.message_options.message_option.get()):
+                    case "Normal message":
+                        pg.typewrite(self.message_entry.get())
+                    case "With numbers":
+                        pg.typewrite(f"{i + 1}. {self.message_entry.get()}")
+                    case "Random number":
+                        pg.typewrite(randint(0, 99))
+                    case "Random word":
+                        pass
+                    case "Random pokemon":
+                        pass
                 pg.press("enter")
 
+                # Time delay
                 match (self.delay_options.time_delay.get()):
                     case "Instant":
                         pass
