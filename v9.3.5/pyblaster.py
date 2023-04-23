@@ -2,6 +2,7 @@ import customtkinter as ctk
 import pyautogui as pg
 from time import sleep
 from random import randint, choice
+from os import path
 
 from title_label import TitleLabel
 from message_options import MessageOptions
@@ -81,6 +82,7 @@ class PyBlaster(ctk.CTk):
                     break
 
                 # Send the message
+                dir_path = path.dirname(path.abspath(__file__))
                 match (self.message_options.message_option.get()):
                     case "Normal message":
                         pg.typewrite(self.message_entry.get())
@@ -91,7 +93,7 @@ class PyBlaster(ctk.CTk):
                     case "Random word":
                         words = []
                         with open(
-                            "/home/aries/GitHub/pyblaster/v9.1.2/data/words.txt", "r"
+                            path.join(dir_path, "data", "words.txt"), "r"
                         ) as file:
                             lines = file.readlines()
                             for line in lines:
@@ -100,13 +102,12 @@ class PyBlaster(ctk.CTk):
                     case "Random pokemon":
                         pokemon = []
                         with open(
-                            "/home/aries/GitHub/pyblaster/v9.1.2/data/pokemon.txt", "r"
+                            path.join(dir_path, "data", "pokemon.txt"), "r"
                         ) as file:
                             lines = file.readlines()
                             for line in lines:
                                 pokemon.append(line.strip())
                         pg.typewrite(choice(pokemon))
-                        pass
                 pg.press("enter")
 
                 # Time delay
