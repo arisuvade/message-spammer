@@ -1,15 +1,15 @@
 import customtkinter as ctk
 
 
-class MessageEntry(ctk.CTkEntry):
-    def __init__(self, master, **kwargs):
+class CountEntry(ctk.CTkEntry):
+    def __init__(self, parent, **kwargs):
         super().__init__(
-            master,
-            placeholder_text="Message",
+            parent,
+            placeholder_text="Count",
             width=250,
             height=30,
             border_width=2,
             corner_radius=10,
-            font=("Jetbrains Mono", 14),
+            font=("Jetbrains Mono", 14, "bold"),
             **kwargs,
         )

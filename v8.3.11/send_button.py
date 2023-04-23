@@ -2,9 +2,9 @@ import customtkinter as ctk
 
 
 class SendButton(ctk.CTkButton):
-    def __init__(self, master, **kwargs):
+    def __init__(self, parent, **kwargs):
         super().__init__(
-            master,
+            parent,
             width=100,
             height=30,
             border_width=0,

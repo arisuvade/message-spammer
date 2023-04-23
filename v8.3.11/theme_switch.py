@@ -6,9 +6,9 @@ def set_appearance_mode(mode):
 
 
 class ThemeSwitch(ctk.CTkSwitch):
-    def __init__(self, master, **kwargs):
+    def __init__(self, parent, **kwargs):
         super().__init__(
-            master,
+            parent,
             text="Dark Mode",
             command=self.theme,
             **kwargs,

@@ -4,9 +4,10 @@ from time import sleep
 from random import choice
 
 from title_label import TitleLabel
+from message_options import MessageOptions
 from message_entry import MessageEntry
 from count_entry import CountEntry
-from delay_option import DelayOption
+from delay_options import DelayOptions
 from send_button import SendButton
 from theme_switch import ThemeSwitch
 from error_label import ErrorLabel
@@ -18,39 +19,43 @@ class PyBlaster(ctk.CTk):
 
         # Window
         self.wm_title("PyBlaster")
-        self.geometry("300x240")
+        self.geometry("300x260")
         self.resizable(False, False)
 
         # Title
-        self.title = TitleLabel(master=self)
-        self.title.place(relx=0.5, rely=0.09, anchor="center")
+        self.title = TitleLabel(self)
+        self.title.place(relx=0.5, rely=0.05, anchor="center")
 
         # Update title every 5 seconds
         self.after(5000, self.title.update_title)
 
         # Message
-        self.msg = MessageEntry(self)
-        self.msg.place(relx=0.5, rely=0.25, anchor="center")
+        self.message_entry = MessageEntry(self)
+        self.message_entry.place(relx=0.5, rely=0.31, anchor="center")
+
+        # Message options
+        self.message_options = MessageOptions(self, self.message_entry)
+        self.message_options.place(relx=0.5, rely=0.17, anchor="center")
 
         # Count
-        self.count = CountEntry(self)
-        self.count.place(relx=0.5, rely=0.4, anchor="center")
+        self.count_entry = CountEntry(self)
+        self.count_entry.place(relx=0.5, rely=0.45, anchor="center")
 
         # Delay
-        self.delay_option = DelayOption(self)
-        self.delay_option.place(relx=0.5, rely=0.55, anchor="center")
+        self.delay_options = DelayOptions(self)
+        self.delay_options.place(relx=0.5, rely=0.59, anchor="center")
 
         # Send
         self.send = SendButton(self, command=self.send_msg)
-        self.send.place(relx=0.5, rely=0.7, anchor="center")
+        self.send.place(relx=0.5, rely=0.76, anchor="center")
 
         # Theme switch
         self.theme_switch = ThemeSwitch(self)
-        self.theme_switch.place(relx=0.5, rely=0.85, anchor="center")
+        self.theme_switch.place(relx=0.5, rely=0.88, anchor="center")
 
         # Error
         self.error_label = ErrorLabel(self)
-        self.error_label.place(relx=0.5, rely=0.95, anchor="center")
+        self.error_label.place(relx=0.5, rely=0.97, anchor="center")
 
     def send_msg(self):
         try:
@@ -58,10 +63,10 @@ class PyBlaster(ctk.CTk):
             self.error_label.configure(text="")
 
             # Disable count input
-            self.count.configure(state="disabled")
+            self.count_entry.configure(state="disabled")
 
             # Get count from user input
-            count = int(self.count.get())
+            count = int(self.count_entry.get())
 
             # To move the mouse and run
             height, width = pg.size()
@@ -76,10 +81,10 @@ class PyBlaster(ctk.CTk):
                     break
 
                 # Send the message
-                pg.typewrite(self.msg.get())
+                pg.typewrite(self.message_entry.get())
                 pg.press("enter")
 
-                match (self.delay_option.delay.get()):
+                match (self.delay_options.time_delay.get()):
                     case "Instant":
                         pass
                     case "0.5 second":
@@ -98,4 +103,4 @@ class PyBlaster(ctk.CTk):
 
         finally:
             # Enable count input after message sending is complete or error handle
-            self.count.configure(state="normal")
+            self.count_entry.configure(state="normal")

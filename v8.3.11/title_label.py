@@ -2,9 +2,9 @@ import customtkinter as ctk
 
 
 class TitleLabel(ctk.CTkLabel):
-    def __init__(self, master, **kwargs):
+    def __init__(self, parent, **kwargs):
         super().__init__(
-            master,
+            parent,
             text="Type your message and how many.",
             font=("Jetbrains Mono", 14, "bold"),
             **kwargs,
