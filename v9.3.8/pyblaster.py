@@ -98,7 +98,7 @@ class PyBlaster(ctk.CTk):
                         with open(path.join(dir_path, "data", "words.txt"), "r") as f:
                             lines = f.readlines()
                             for line in lines:
-                                words.append(line.strip())
+                                words.append(line.strip().capitalize())
                         pg.typewrite(choice(words))
 
                     case "Random pokemon":
@@ -106,7 +106,7 @@ class PyBlaster(ctk.CTk):
                         with open(path.join(dir_path, "data", "pokemon.txt"), "r") as f:
                             lines = f.readlines()
                             for line in lines:
-                                pokemon.append(line.strip())
+                                pokemon.append(line.strip().capitalize())
                         pg.typewrite(choice(pokemon))
 
                 pg.press("enter")
