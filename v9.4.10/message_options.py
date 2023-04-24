@@ -52,4 +52,4 @@ class MessageOptions(ctk.CTkOptionMenu):
                     self.message_entry.configure(
                         placeholder_text="Random pokemon from Gen 1-9"
                     )
-            self.message_entry.configure(state="disabled")
+            self.message_entry.configure(state="readonly")
