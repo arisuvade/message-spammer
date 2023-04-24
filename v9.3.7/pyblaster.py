@@ -84,6 +84,7 @@ class PyBlaster(ctk.CTk):
 
                 # Send the message
                 dir_path = path.dirname(path.abspath(__file__))
+
                 match (self.message_options.message_option.get()):
                     case "Normal message":
                         pg.typewrite(self.message_entry.get())
@@ -91,24 +92,23 @@ class PyBlaster(ctk.CTk):
                         pg.typewrite(f"{i + 1}. {self.message_entry.get()}")
                     case "Random number":
                         pg.typewrite(f"{randint(0, 99)}")
+
                     case "Random word":
                         words = []
-                        with open(
-                            path.join(dir_path, "data", "words.txt"), "r"
-                        ) as file:
-                            lines = file.readlines()
+                        with open(path.join(dir_path, "data", "words.txt"), "r") as f:
+                            lines = f.readlines()
                             for line in lines:
                                 words.append(line.strip())
                         pg.typewrite(choice(words))
+
                     case "Random pokemon":
                         pokemon = []
-                        with open(
-                            path.join(dir_path, "data", "pokemon.txt"), "r"
-                        ) as file:
-                            lines = file.readlines()
+                        with open(path.join(dir_path, "data", "pokemon.txt"), "r") as f:
+                            lines = f.readlines()
                             for line in lines:
                                 pokemon.append(line.strip())
                         pg.typewrite(choice(pokemon))
+
                 pg.press("enter")
 
                 # Time delay
