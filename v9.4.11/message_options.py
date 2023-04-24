@@ -47,9 +47,11 @@ class MessageOptions(ctk.CTkOptionMenu):
                 case "Random word":
                     self.message_entry.configure(placeholder_text="Random english word")
                 case "Random animal":
-                    self.message_entry.configure(placeholder_text="Random animal")
+                    self.message_entry.configure(
+                        placeholder_text="Random animal in english"
+                    )
                 case "Random pokemon":
                     self.message_entry.configure(
-                        placeholder_text="Random pokemon from Gen 1-9"
+                        placeholder_text="Random pokemon from Gen 1-8"
                     )
             self.message_entry.configure(state="readonly")
