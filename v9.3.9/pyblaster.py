@@ -103,7 +103,9 @@ class PyBlaster(ctk.CTk):
 
                     case "Random pokemon":
                         pokemon = []
-                        with open(path.join(dir_path, "data", "pokemon.txt"), "r") as f:
+                        with open(
+                            path.join(dir_path, "data", "pokemons.txt"), "r"
+                        ) as f:
                             lines = f.readlines()
                             for line in lines:
                                 pokemon.append(line.strip().capitalize())
