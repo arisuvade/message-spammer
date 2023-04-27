@@ -27,9 +27,6 @@ class PyBlaster(ctk.CTk):
         self.title = TitleLabel(self)
         self.title.place(relx=0.5, rely=0.05, anchor="center")
 
-        # Update title every 5 seconds
-        self.after(5000, self.title.update_title)
-
         # Message
         self.message_entry = MessageEntry(self)
         self.message_entry.place(relx=0.5, rely=0.31, anchor="center")

@@ -10,6 +10,9 @@ class TitleLabel(ctk.CTkLabel):
             **kwargs,
         )
 
+        # Update title every 5 seconds
+        self.after(5000, self.update_title)
+
     def update_title(self):
         # Change title
         self.configure(text="Hover the mouse to end.")
