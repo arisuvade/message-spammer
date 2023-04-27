@@ -8,10 +8,10 @@ from delay_options import DelayOptions
 from send_button import SendButton
 from theme_switch import ThemeSwitch
 from error_label import ErrorLabel
-from send_message import send_message
+from pyblaster.send_message import send_message
 
 
-class PyBlaster(ctk.CTk):
+class UI(ctk.CTk):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
