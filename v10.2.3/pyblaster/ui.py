@@ -1,13 +1,13 @@
 import customtkinter as ctk
 
-from title_label import TitleLabel
-from message_options import MessageOptions
-from message_entry import MessageEntry
-from count_entry import CountEntry
-from delay_options import DelayOptions
-from send_button import SendButton
-from theme_switch import ThemeSwitch
-from error_label import ErrorLabel
+from ui.title_label import TitleLabel
+from ui.message_options import MessageOptions
+from ui.message_entry import MessageEntry
+from ui.count_entry import CountEntry
+from ui.delay_options import DelayOptions
+from ui.send_button import SendButton
+from ui.theme_switch import ThemeSwitch
+from ui.error_label import ErrorLabel
 from pyblaster.send_message import send_message
 
 
