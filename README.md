@@ -52,7 +52,7 @@ To use the PyBlaster app, follow these steps:
 4. Press "Send" to send the message to the recipient.
 
 ## License
-This project is licensed under the [MIT License](https://github.com/arisuvade/message-spammer/blob/main/LICENSE).
+This project is licensed under the [MIT License](https://github.com/arisuvade/pyblaster/blob/main/LICENSE).
 
 ## Acknowledgements
 This app was inspired by the need to send mass messages to people for various purposes. Thanks to the open-source community for providing the tools and resources needed to create this app.
