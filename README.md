@@ -11,6 +11,7 @@ PyBlaster is a Message Spammer app created in Python that allows you to send aut
 - Switch themes to dark and light mode
 
 ## Installation
+
 To use the PyBlaster app, you'll need to install the tk, customtkinter, pyautogui packages. Here's how you can do that:
 
 1. Install the tk package: 
@@ -19,17 +20,20 @@ To use the PyBlaster app, you'll need to install the tk, customtkinter, pyautogu
     - Fedora: `sudo dnf install tkinter`
 
 2. Install the customtkinter package:
-    - Install the package using pip:
     ```bash
     $ pip install customtkinter
     ```
 
 3. Install the pyautogui package:
-    - Install the package using pip:
     ```bash
     $ pip install pyautogui
     ```
-    
+
+4. Clone this repository:
+    ```bash
+    $ git clone https://github.com/arisuvade/pyblaster.git
+    $ cd pyblaster
+    ```
 
 ## Usage
 To use the PyBlaster app, follow these steps:
