@@ -68,9 +68,13 @@ def send_message(error_label, count, message_options, message_entry, delay_optio
                     sleep(1)
                 case "2 seconds":
                     sleep(2)
+                case "3 seconds":
+                    sleep(3)
+                case "5 seconds":
+                    sleep(5)
                 case "Random":
-                    delay_times = [0.5, 1, 2]
+                    delay_times = [0.5, 1, 2, 3, 5]
                     sleep(choice(delay_times))
 
     except ValueError:
-        raise ValueError("Error: Invalid number in count.")
+        error_label.configure(text="Error: Invalid number in count.")
