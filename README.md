@@ -6,13 +6,13 @@ PyBlaster is a Message Spammer app created in Python that allows you to send aut
 - Has title x tutorial of how to use
 - Customize the message contents
 - Has 6 options of messages
-- Customize how many message to send
+- Customize how many messages to send
 - Customize the time delay of messages
 - Switch themes to dark and light mode
 
 ## Installation
 
-To use the PyBlaster app, you'll need to install the tk, customtkinter, pyautogui packages. Here's how you can do that:
+To use the PyBlaster app, you'll need to install the tk, customtkinter, and pyautogui packages. Also, you need to clone this repository. Here's how you can do that:
 
 1. Install the tk package: 
     - Arch: `sudo pacman -S tk`
@@ -32,7 +32,6 @@ To use the PyBlaster app, you'll need to install the tk, customtkinter, pyautogu
 4. Clone this repository:
     ```bash
     $ git clone https://github.com/arisuvade/pyblaster.git
-    $ cd pyblaster
     ```
 
 ## Usage
@@ -47,7 +46,7 @@ To use the PyBlaster app, follow these steps:
     $ ./main.py
     ```
 
-3. Follow the prompts to customize the message contents, how many the message to send, and what is the time delay. You can also change the theme to dark or light mode.
+3. Follow the prompts to pick a message type, customize the message contents, how many the message to send, and what is the time delay between messages. You can also change the theme to dark or light mode.
 
 4. Press "Send" to send the message to the recipient.
 
