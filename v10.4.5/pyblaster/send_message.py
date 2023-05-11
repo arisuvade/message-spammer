@@ -60,8 +60,6 @@ def send_message(error_label, count, message_options, message_entry, delay_optio
 
             # Time delay
             match (delay_options):
-                case "Instant":
-                    pass
                 case "0.5 second":
                     sleep(0.5)
                 case "1 second":
@@ -73,8 +71,7 @@ def send_message(error_label, count, message_options, message_entry, delay_optio
                 case "5 seconds":
                     sleep(5)
                 case "Random":
-                    delay_times = [0.5, 1, 2, 3, 5]
-                    sleep(choice(delay_times))
+                    sleep(choice([0.5, 1, 2, 3, 5]))
 
     except ValueError:
         error_label.configure(text="Error: Invalid number in count.")
