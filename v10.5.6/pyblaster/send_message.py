@@ -30,7 +30,7 @@ def send_message(error_label, count, message_options, message_entry, delay_optio
                 case "With numbers":
                     pg.typewrite(f"{i + 1}. {message_entry}")
                 case "Random number":
-                    pg.typewrite(f"{randint(0, 99)}")
+                    pg.typewrite(f"{randint(0, 1_000_000)}")
 
                 case "Random word":
                     words = []
