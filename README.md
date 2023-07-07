@@ -32,7 +32,6 @@ To use the PyBlaster app, follow these steps:
 2. Run the script:
     ```bash
     $ cd pyblaster
-    $ cd [VERSION]
     $ ./main.py
     ```
 
