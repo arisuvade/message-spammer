@@ -8,7 +8,7 @@
 
 - Fixed some bugs
 - Adjust random number
-- Remove unecessary feature
+- Remove unnecessary feature
 - Fixed grammar and spelling
 - Fixed title label
 - Add clone
