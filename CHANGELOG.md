@@ -1,9 +1,10 @@
 # Changelog
 
-## [11.2.2] - 2023-07-23
+## [11.2.3] - 2023-07-23
 - Change the cd in README.md
 - Added requirements.txt
 - Change the installation in README.md
+- Fixed spelling error
 
 ## [11.1.7] - 2023-07-23
 - Fixed with number not working
