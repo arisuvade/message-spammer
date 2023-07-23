@@ -9,7 +9,7 @@ To use the PyBlaster app, you'll need to install the tk, customtkinter, and pyau
     - Debian: `sudo apt-get install python-tk`
     - Fedora: `sudo dnf install tkinter`
 
-2. Install the customtkinter and pyautogui packages:
+2. Install customtkinter and pyautogui packages:
     ```bash
     $ cd pyblaster-[VERSION]
     $ pip install -r requirements.txt
