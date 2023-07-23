@@ -42,7 +42,7 @@ class UI(ctk.CTk):
 
         # Send
         self.send = SendButton(self, command=self.send_message)
-        self.send.place(relx=0.5, rely=0.76, anchor="center")
+        self.send.place(relx=0.5, rely=0.74, anchor="center")
 
         # Theme switch
         self.theme_switch = ThemeSwitch(self)
