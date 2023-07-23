@@ -1,5 +1,10 @@
 # Changelog
 
+## [11.2.2] - 2023-07-23
+- Change the cd in README.md
+- Added requirements.txt
+- Change the installation in README.md
+
 ## [11.1.7] - 2023-07-23
 - Fixed with number not working
 - Added entry for random number
