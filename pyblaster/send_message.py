@@ -23,18 +23,19 @@ def send_message(error_label, count, message_options, message_entry, delay_optio
 
             # Send the message
             dir_path = path.dirname(path.abspath(__file__))
+            data_dir = path.join(dir_path, "data")
 
             match (message_options):
                 case "Normal message":
                     pg.typewrite(message_entry)
-                case "With numbers":
+                case "With number":
                     pg.typewrite(f"{i + 1}. {message_entry}")
                 case "Random number":
-                    pg.typewrite(f"{randint(0, 1_000_000)}")
+                    pg.typewrite(f"{randint(1, 10)}")
 
                 case "Random word":
                     words = []
-                    with open(path.join(dir_path, "data", "words.txt"), "r") as f:
+                    with open(path.join(data_dir, "words.txt"), "r") as f:
                         lines = f.readlines()
                         for line in lines:
                             words.append(line.strip().capitalize())
@@ -42,7 +43,7 @@ def send_message(error_label, count, message_options, message_entry, delay_optio
 
                 case "Random animal":
                     animals = []
-                    with open(path.join(dir_path, "data", "animals.txt"), "r") as f:
+                    with open(path.join(data_dir, "animals.txt"), "r") as f:
                         lines = f.readlines()
                         for line in lines:
                             animals.append(line.strip())
@@ -50,7 +51,7 @@ def send_message(error_label, count, message_options, message_entry, delay_optio
 
                 case "Random pokemon":
                     pokemons = []
-                    with open(path.join(dir_path, "data", "pokemons.txt"), "r") as f:
+                    with open(path.join(data_dir, "pokemons.txt"), "r") as f:
                         lines = f.readlines()
                         for line in lines:
                             pokemons.append(line.strip().capitalize())
