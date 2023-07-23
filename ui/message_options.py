@@ -36,7 +36,7 @@ class MessageOptions(ctk.CTkOptionMenu):
             match (option):
                 case "Normal message":
                     self.message_entry.configure(placeholder_text="Message")
-                case "With numbers":
+                case "With number":
                     self.message_entry.configure(placeholder_text="1. Message")
 
         else:
@@ -44,12 +44,12 @@ class MessageOptions(ctk.CTkOptionMenu):
 
             match (option):
                 case "Random number":
-                    self.message_entry.configure(placeholder_text="Random number")
+                    self.message_entry.configure(placeholder_text="Between 1-10")
                 case "Random word":
-                    self.message_entry.configure(placeholder_text="Random word")
+                    self.message_entry.configure(placeholder_text="English word")
                 case "Random animal":
-                    self.message_entry.configure(placeholder_text="Random animal")
+                    self.message_entry.configure(placeholder_text="English animal")
                 case "Random pokemon":
-                    self.message_entry.configure(placeholder_text="Random pokemon")
+                    self.message_entry.configure(placeholder_text="Gen 1-8 pokemon")
 
             self.message_entry.configure(state="readonly")
